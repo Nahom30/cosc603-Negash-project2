@@ -6,14 +6,14 @@ package edu.towson.cis.cosc603.project2.monopoly;
  */
 public abstract class Cell implements IOwnable {
 	
-	/** The available. */
-	private boolean available = true;
-	
 	/** The name. */
 	private String name;
 	
 	/** The theOwner. */
 	protected Player theOwner;
+
+	/** The available. */
+	private boolean available = true;
 
 	/**
 	 * Gets the name.
@@ -42,30 +42,12 @@ public abstract class Cell implements IOwnable {
 	}
 
 	/**
-	 * Checks if is available.
-	 *
-	 * @return true, if is available
-	 */
-	public boolean isAvailable() {
-		return available;
-	}
-	
-	/**
 	 * Play action.
 	 * @param msg TODO
 	 * @return TODO
 	 */
 	public abstract boolean playAction(String msg);
 
-	/**
-	 * Sets the available.
-	 *
-	 * @param available the new available
-	 */
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	
 	/**
 	 * Sets the name.
 	 *
@@ -89,4 +71,22 @@ public abstract class Cell implements IOwnable {
     public String toString() {
         return name;
     }
+
+	/**
+	 * Checks if is available.
+	 *
+	 * @return true, if is available
+	 */
+	public boolean isAvailable() {
+		return available;
+	}
+
+	/**
+	 * Sets the available.
+	 *
+	 * @param available the new available
+	 */
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }

@@ -1,5 +1,34 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
-{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red0\green0\blue0;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Task 6: 
+\f1\i \cf2 For this task, briefly describe if this omission is an oversight on the part of Eclipse\'92s refactoring operation and why or why not. Additionally, briefly describe how (or if) this operation is any different than a simple find all and replace.
+\i0\b0 \cf0  \
+\
+The omission was not an oversight on Eclipse refactoring. The rename factoring operation applied on protected variable \'93owner\'94 > \'93theOwner\'94. The setTheOwner method has a parameter of  of type player named \'93owner\'94 . Eclipse left this parameter unchanged because it is not an instance of the class field, but, \'93owner\'94>\'94theOwner\'94 was named identical to it. \
+\
+Renaming a class field does similar job as find all and replace, but has unique difference. With find all and replace, it searches for patterns that are strings and wouldn\'92t distinguish identifier role in the program, which adds responsibility to the programmer to fix the remaining issue. This method is error prone. However, Renaming a Class Field refactoring method gains access to to the compiler symbol table and will be able to distinguish identifiers by function and process through the class hierarchies to change the name. \
+\
+
+\b\fs28 Task 7: 
+\f2\i \cf2 For this task, briefly describe your experience with this task and for which design smells pushing down or pulling up a class\'92s field(s) and/or associated methods could help make the code more maintainable and why.  
+\fs24 \cf3 \
+\
+
+\i0\b0 I enjoyed using Push-down/Pull-up feature in Eclipse. I can see how this can be resourceful when when refactoring your project you\'92re working on. It helps with locating all the subtype and allow you to push down the fields and  method. It allows you to pull up fields and methods from all subclasses in a single instance in the parent class. This definitely helps with saving time. \
+\
+Pull-up: Duplicated Code\
+\
+Pull-up could help Duplicated Codes refactoring  project be more maintainable. Duplication occurs when method that does similar job mentioned in different class. The code performs the same job but mentioned in different classes. By extracting the method from both classes, you can pull up the field for the field used in the method that are pulling up. This will help merging the code, which simplifies the structure of the code and make it shorter. \
+\
+Push-down: God Class\
+ \
+Push-down can be used in refactoring God Classes for project to be more maintainable. Creating a god object is considered bad programing practice. It\'92s result of technique used for tight programming environment. By performing push-down, it will reduce god object  using far too many global variable to store state information. 
+\i\b \
+
+\fs28 \cf2 \
 }

@@ -2,7 +2,7 @@
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\froman\fcharset0 Times-Roman;
 }
 {\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red0\green0\blue0;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\margl1440\margr1440\vieww13020\viewh11420\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs24 \cf0 Task 6: 
@@ -34,5 +34,71 @@ Push-down can be used in refactoring God Classes for project to be more maintain
 \b0  
 \i\b \cf2 For this task, briefly describe your experience with this task and for which design smells extracting an interface could help make the code more maintainable and why. In your description, be sure to include a description of which methods you extracted into the interface and what new files were created in this operation.\
 \
+
+\i0\b0\fs24 \cf3 Eclipse has a refactor tool that allows you to extract interface. It is an easy way to to create/implement interfaces that\'92s needed for a project. With this tutorial, I selected to move getTheOwner() and setTheOwner() to create a new class IOwnable, which Cell class now implements. In IOwnable class there are abstract methods, getTheOwner(), setTheOwner() that cell implements. \
 \
+Design smell like Too Many Parameter, Class is Too long, or Method Too long, will be maintainable code if Extract Interface is performed. It will help ease readability and understand the code. \
+\
+
+\b\fs28 Task 9: 
+\i \cf2 For this task, briefly describe your experience with this task including the method signature you extracted and why you chose this one.  \
+\
+
+\i0\b0\fs24 \cf3 Eclipse has a refactoring tool, which allows to you create a method to reduce complexity and ease read of code. I chose the string declaration with the for loop. The string monopolies was not used anywhere else in the method. Choosing this reduces the parameter on the new method. In the new method it only passes rentToCharge as a parameter. \
+
+\fs28 \
+
+\b Task 10: 
+\i \cf2 For this task, briefly describe your experience with this task and for which design smells creating a local variable from repeated code could help make the code more maintainable and why. In addition, comment on whether it is always OK to do this to a function call and whether it could affect the correctness of a program.  
+\i0 \
+
+\b0\fs24 \cf3 \
+Eclipse has a refactoring tool which allows creating local variable from repeated code. It is a sophisticated way making simpler and reduces from manual typing everything. By highlighting the entire expression, it offered a local variable option. it found both occurrences and replace them with one local variable. This is an \'93OK\'94 change to make.  It is useful to when debugging because the local variable allows one to see the expression\'92s value versus express alone does not offer a handle by which to reference it. It promotes cohesion and ease of understanding with code. \
+\
+
+\b\fs28 Task 11: 
+\i \cf2 For this task, briefly describe your experience with this task and for which design smells changing a method\'92s signature could help make the code more maintainable and why. In addition, comment on why things are changing in other class than just Cell.java and how this affected the definitions of any other classes besides Cell.java.
+\i0 \
+\
+
+\b0\fs24 \cf3 Eclipse provides refactoring tool to change method signature, which changes the physical structure of code and classes. Like discussed in the description, it requires manual modification in order to fully complete it. In this process i converted the method to boolean that returns true/false. Changed it from private to public so other classes can access it. By doing this, I realized it affected other codes and classes that where this method is called or defined. I created a return statement for each methods with meaningless boolean. In this cases, it occurred in more than Cell class, because the specifics of the implementation of playAction() are in the subclasses. To fix this, in every subclass where playAction() was defined were adjusted to pass  \'93msg\'94 parameter. \
+\
+Bad smells like Long Parameter List would benefit from this to make code maintainable if the parameter in the method is inappropriate. By changing the signature method, it can help maintaining in elegant way. \
+\
+
+\b\fs28 Task 15: \
+	
+\f1\i \cf2 A description (2-3 paragraphs) of what you learned from this project and how it relates 	to some of the topics covered in lecture\
+
+\i0\b0\fs24 \cf3 \
+I thought this tutorial was excellent. It exposes the tools Eclipse provides on handling bad smell. Through these tasks I learned the fundamental operation needed to operate these tools. Initially, my understanding of refactoring was Extracting Method from a code to make it simpler.  With this tutorial and class lecture, I discovered refactoring is more than extracting method. I learned about few tools that will essentially save me time in fixing code going forward. I notice that these tools help improve the code by enhancing code readability and more cohesion. \
+\
+Regarding the lectures, I found them to be very useful in grasping the fundamental fact of bad smell. I learned various type of bad smell programmers should be aware of. This was a learning curve for me. By understanding the concept of bad smell, I know it will make a better programmer.  \
+\
+\
+\
+	
+\i\b\fs28 \cf2 A description (2-3 paragraphs) of what you liked about Eclipse\'92s support for refactoring 	including its strengths and limitations as well as your impression of JDeodorant\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i0\b0\fs24 \cf3 \
+Regarding refactoring using Eclipse, I learned quiet a lot from this project. Eclipse ability to perform task for us is very impressive. The most i like about about Eclipse\'92s refactoring is it\'92s ability on altering the structure of a program to make a logic sense while writing as little as possible without changing its functionality. This means less time will be needed to fix bugs, if we continue refactoring on regular basis to keep a good structure. By doing this, it will also be easy for programmers to add new code to the project. \
+\
+Another impressive thing I notice about Eclipse is that it has an automatic refactoring tool that can generate code itself.  The following are the things it can change:  Physical Structure, Class Level Structure, and Structure inside a class. Though the tool is not fully automatic and may require additional programming skills to alter things; it provides option on how to fix bugs by providing few suggestion. \
+\
+One of the limitation I experienced with Eclipse is regarding changing method signature where modification of the code requires manual operation from the programmer. Not doing coding is a limitation, but time can potentially be consumed if it\'92s a large project that\'92s being worked with.  Also another limitation I came across is the preview window that provide comparison original and refactor code. I wish the window was bigger. I wanted to resize it but it didn\'92t have attribution to allow that.  
+\i\b\fs28 \cf2 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i0\b0\fs24 \cf0  I did come across issue in applying  JDeodorant to my project. I was very excited working with this feature but it wouldn\'92t work for me. Every time I tried using it, a notice that says \'93The chosen property is currently not available\'94 pops up. I believe it\'92s a version compatibility issue, and I couldn\'92t find any source online to solve this matter. Other than that, I believe Eclipse refactoring tools are very powerful maintenance that I will be using quiet often from here on. \
+\
+
+\i\b\fs28 \
+\cf2 	A description (1-2 paragraphs) of how/why unit tests are important when doing refactoring\
+
+\i0\b0 \cf3 \
+
+\fs24 Performing unit test is very essential to refactoring. It\'92s is a form of conformation that ensures you the logic, functionality of your codes are still the same. Refactoring consists of changing the structure of you code with aim of not changing the functionality behavior. When refactoring, some operation consist of changing parameter and alternating structure. This will still execute, if it\'92s done correctly. How would we know if the code behaving the same way? Without unit testing, it is practically difficult to identify the problem; it is costs time. Unit tests record the important use cases of your project. Unit test tells you what the code has to do. It provides a detailed specification that can be used to ensure the new refactored design achieves all the goals that have been identified. 
+\i\b \cf2 \
 }
